@@ -65,7 +65,13 @@ namespace ConsoleApp1
                         }
                         break;
                     case "4":
-                        Console.WriteLine("4");
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (string nevek in list)
+                        {
+                            if (nevek.Length < 9)
+                                Console.WriteLine($"{sorszam++}. {nevek}");
+                        }
                         break;
                     case "5":
                         Console.WriteLine("5");
