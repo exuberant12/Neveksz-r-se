@@ -1,4 +1,8 @@
-﻿namespace ConsoleApp1
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
@@ -37,7 +41,12 @@
                         }
                         break;
                     case "2":
-                        Console.WriteLine("2");
+                        Console.Clear();
+                        int sorszam2 = 0;
+                        foreach (var nevek in list.Where(n => !string.IsNullOrWhiteSpace(n) && n.All(c => char.IsLetter(c) || char.IsWhiteSpace(c))))
+                        {
+                            Console.WriteLine($"{sorszam2++}. {nevek}");
+                        }
                         break;
                     case "3":
                         Console.WriteLine("3");
