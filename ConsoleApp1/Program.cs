@@ -57,10 +57,11 @@ namespace ConsoleApp1
                         break;
                     case "3":
                         Console.Clear();
-                        int sorszam3 = 0;
-                        foreach (var nevek in list.Where(n => !string.IsNullOrWhiteSpace(n) && char.IsUpper(n.TrimStart()[0])))
+                        sorszam = 0;
+                        foreach (string nevek in list)
                         {
-                            Console.WriteLine($"{sorszam3++}. {nevek}");
+                            if (char.IsUpper(nevek[0]))
+                                Console.WriteLine($"{sorszam++}. {nevek}");
                         }
                         break;
                     case "4":
