@@ -74,7 +74,26 @@ namespace ConsoleApp1
                         }
                         break;
                     case "5":
-                        Console.WriteLine("5");
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (string nevek in list)
+                        {
+                            bool jo = true;
+                            foreach (char betu in nevek)
+                            {
+                                if (!char.IsLetter(betu) && betu != ' ')
+                                    jo = false;
+                            }
+                            string[] nevdarabok = nevek.Split(" ");
+                            foreach (var nevdarab in nevdarabok)
+                            {
+                                if (!char.IsUpper(nevdarab[0])) jo = false;
+                                if (nevdarab.Substring(1) != nevdarab.Substring(1).ToLower())
+                                    jo = false;
+                            }
+                            if (jo)
+                                Console.WriteLine($"{sorszam++}. {nevek}");
+                        }
                         break;
                     default:    
                         Console.WriteLine("Rossz parancs!");
