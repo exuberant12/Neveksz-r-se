@@ -42,14 +42,26 @@ namespace ConsoleApp1
                         break;
                     case "2":
                         Console.Clear();
-                        int sorszam2 = 0;
-                        foreach (var nevek in list.Where(n => !string.IsNullOrWhiteSpace(n) && n.All(c => char.IsLetter(c) || char.IsWhiteSpace(c))))
+                        sorszam = 0;
+                        foreach (string nevek in list)
                         {
-                            Console.WriteLine($"{sorszam2++}. {nevek}");
+                            bool jo = true;
+                            foreach (char betu in nevek)
+                            { 
+                                if (!char.IsLetter(betu) && betu!=' ')
+                                    jo = false;
+                            } 
+                            if(jo)
+                                Console.WriteLine($"{sorszam++}. {nevek}");
                         }
                         break;
                     case "3":
-                        Console.WriteLine("3");
+                        Console.Clear();
+                        int sorszam3 = 0;
+                        foreach (var nevek in list.Where(n => !string.IsNullOrWhiteSpace(n) && char.IsUpper(n.TrimStart()[0])))
+                        {
+                            Console.WriteLine($"{sorszam3++}. {nevek}");
+                        }
                         break;
                     case "4":
                         Console.WriteLine("4");
