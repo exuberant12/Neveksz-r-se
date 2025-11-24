@@ -29,7 +29,12 @@
                     case "0":
                         return;
                     case "1":
-                        Console.WriteLine("1");
+                        Console.Clear();
+                        int sorszam = 0;
+                        foreach (string nevek in list)
+                        {
+                            Console.WriteLine($"{sorszam++}. { nevek}");
+                        }
                         break;
                     case "2":
                         Console.WriteLine("2");
